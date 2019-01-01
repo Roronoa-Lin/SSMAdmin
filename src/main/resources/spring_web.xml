@@ -11,7 +11,7 @@
     <!-- 启用 mvc 常用注解 -->
     <mvc:annotation-driven/>
     <!--将所有静态资源，交给 Servlet 处理-->
-        <!--<mvc:default-servlet-handler default-servlet-name="freemarkerResolver"/>-->
+    <!--<mvc:default-servlet-handler default-servlet-name="freemarkerResolver"/>-->
 
     <mvc:resources location="/WEB-INF/AdminLTE/dist/" mapping="/dist/**"/>
     <mvc:resources location="/WEB-INF/AdminLTE/bower_components/" mapping="/bower_components/**"/>
