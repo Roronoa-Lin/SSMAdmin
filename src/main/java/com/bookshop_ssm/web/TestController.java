@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class TestController {
     //访问index测试session登陆权限
-    @RequestMapping(value = "/admin",method = RequestMethod.GET)
+    @RequestMapping(value = "/admintt",method = RequestMethod.GET)
     public String select(Model model,HttpSession session)
     {
         String user = (String)session.getAttribute("user");
@@ -30,7 +30,7 @@ public class TestController {
         return "/pages/examples/login";
     }
     //登陆验证
-    @RequestMapping("/loginaction")
+    @RequestMapping("/admin")
     public String loginaction(HttpSession session,Model model,@RequestParam("email") String email, @RequestParam("password") String password){
         if (email.equals(password)){
             session.setAttribute("user",email); //设置session
