@@ -1,4 +1,4 @@
-package com.bookshop_ssm.entity;
+package com.admin.entity;
 
 public class Book {
     private int bookid;

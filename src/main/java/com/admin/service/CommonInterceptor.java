@@ -1,4 +1,4 @@
-package com.bookshop_ssm.service;
+package com.admin.service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

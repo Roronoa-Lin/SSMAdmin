@@ -1,7 +1,7 @@
-package com.bookshop_ssm.service;
+package com.admin.service;
 
-import com.bookshop_ssm.entity.Book;
-import com.bookshop_ssm.dao.IBookDao;
+import com.admin.entity.Book;
+import com.admin.dao.IBookDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

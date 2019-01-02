@@ -1,4 +1,4 @@
-package com.bookshop_ssm.web;
+package com.admin.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

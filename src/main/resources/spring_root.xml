@@ -5,7 +5,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- 扫描 service包使用@Component/@Service/@Repository/@Controller 注解的类 将其实例化，放入容器中 注解 -->
-    <contxt:component-scan base-package="com.bookshop_ssm.service"/>
+    <contxt:component-scan base-package="com.admin.service"/>
 
     <!--创建数据源-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
@@ -27,7 +27,7 @@
     <!--映射 dao 中  数据访问类-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-        <property name="basePackage" value="com.bookshop_ssm.dao"/>
+        <property name="basePackage" value="com.admin.dao"/>
     </bean>
 
 </beans>

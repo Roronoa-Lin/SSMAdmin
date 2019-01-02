@@ -1,4 +1,4 @@
-package com.bookshop_ssm.dao;
+package com.admin.dao;
 
 import java.util.List;
 

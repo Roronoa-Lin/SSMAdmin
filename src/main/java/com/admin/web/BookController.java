@@ -1,7 +1,7 @@
-package com.bookshop_ssm.web;
+package com.admin.web;
 
-import com.bookshop_ssm.entity.Book;
-import com.bookshop_ssm.service.BookService;
+import com.admin.entity.Book;
+import com.admin.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

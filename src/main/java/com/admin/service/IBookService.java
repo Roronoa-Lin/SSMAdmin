@@ -1,4 +1,4 @@
-package com.bookshop_ssm.service;
+package com.admin.service;
 
 import java.util.List;
 
