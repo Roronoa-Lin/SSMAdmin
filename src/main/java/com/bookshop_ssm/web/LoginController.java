@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpSession;
 
 @Controller
-public class TestController {
+public class LoginController {
 
     //登录页
     @RequestMapping("/login")
