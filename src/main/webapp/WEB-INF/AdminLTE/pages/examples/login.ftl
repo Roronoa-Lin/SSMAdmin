@@ -36,7 +36,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">${message!'输入密码以登录！'}</p>
 
-    <form action="loginaction" method="post">
+    <form action="test" method="post">
       <div class="form-group has-feedback">
         <input name="email" type="email" class="form-control" placeholder="Email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
