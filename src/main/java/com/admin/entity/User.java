@@ -9,14 +9,14 @@ public class User {
         super();
     }
     //有参构造
-    public User(String mail,String name,String password){
+    public User(String mail,String password){
         this.mail=mail;
-        this.name=name;
         this.password=password;
     }
     //有参构造
-    public User(String mail,String password){
+    public User(String mail,String name,String password){
         this.mail=mail;
+        this.name=name;
         this.password=password;
     }
     public String getMail(){return mail;}

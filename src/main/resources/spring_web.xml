@@ -71,6 +71,7 @@
             <mvc:exclude-mapping path="/loginaction"/>
             <mvc:exclude-mapping path="/login"/>
             <mvc:exclude-mapping path="/test"/>
+            <mvc:exclude-mapping path="/testuser"/>
             <mvc:exclude-mapping path="/dist/**"/>
             <mvc:exclude-mapping path="/bower_components/**"/>
             <mvc:exclude-mapping path="/dist/**"/>

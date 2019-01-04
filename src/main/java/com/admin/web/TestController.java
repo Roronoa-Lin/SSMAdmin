@@ -1,5 +1,6 @@
 package com.admin.web;
 
+import com.admin.entity.User;
 import com.admin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,20 @@ public class TestController {
         }else {
             model.addAttribute("message","无");
             return "/pages/examples/login";
+        }
+    }
+
+    @RequestMapping("/testuser")
+    public String testuser(Model model, @RequestParam("email") String mail, @RequestParam("password") String password){
+        User test = userService.user(mail,password);
+        String testMail = test.getMail();
+        if (test.equals(null)){
+            model.addAttribute("message","无");
+            return "/pages/examples/login";
+        }else {
+            model.addAttribute("message",testMail);
+            return "/pages/examples/login";
+
         }
     }
 }

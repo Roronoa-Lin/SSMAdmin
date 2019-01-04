@@ -14,4 +14,8 @@ public class UserService implements IUserService<User> {
     public int login(String mail,String password) {
         return userDao.login(mail,password);
     }
+    @Override
+    public User user(String mail,String password) {
+        return userDao.user(mail,password);
+    }
 }

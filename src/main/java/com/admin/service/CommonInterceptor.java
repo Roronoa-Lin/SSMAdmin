@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
+import com.admin.entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -38,8 +39,8 @@ public class CommonInterceptor  extends HandlerInterceptorAdapter{
         if ("/login".equals(url)) {
             return true;
         }else {
-            String username =  (String)request.getSession().getAttribute("user");
-            if(username == null){
+            User user =  (User)request.getSession().getAttribute("user");
+            if(user == null){
                 log.info("Interceptor：跳转到login页面！");
                 request.getRequestDispatcher("/login").forward(request, response);
                 return false;
