@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.admin.entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 public class CommonInterceptor  extends HandlerInterceptorAdapter{
@@ -57,9 +58,10 @@ public class CommonInterceptor  extends HandlerInterceptorAdapter{
     public void postHandle(HttpServletRequest request,
                            HttpServletResponse response, Object handler,
                            ModelAndView modelAndView) throws Exception {
+        Boolean pjax = Boolean.parseBoolean(request.getHeader("X-PJAX"));
         log.info("==============执行顺序: 2、postHandle================");
-        if(modelAndView != null){  //加入当前时间
-            modelAndView.addObject("haha", "测试postHandle");
+        if(pjax){  //替换模板
+            modelAndView.addObject("layoutName", "layout-pjax.ftl");
         }
     }*/
     /**
