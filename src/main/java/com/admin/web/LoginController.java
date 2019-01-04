@@ -67,4 +67,8 @@ public class LoginController {
         session.removeAttribute("user");
         return "/pages/examples/login";
     }
+    @RequestMapping("/index2")
+    public String index(){
+        return "/index2";
+    }
 }
