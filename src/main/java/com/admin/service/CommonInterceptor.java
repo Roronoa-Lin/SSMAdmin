@@ -33,7 +33,7 @@ public class CommonInterceptor  extends HandlerInterceptorAdapter{
         if ("GET".equalsIgnoreCase(request.getMethod())) {
             /*RequestUtil.saveRequest();*/
         }
-        log.info("==============执行顺序: 1、preHandle================");
+        log.info("执行顺序: 1、preHandle");
         String requestUri = request.getRequestURI();
         String contextPath = request.getContextPath();
         String url = requestUri.substring(contextPath.length());
@@ -59,7 +59,7 @@ public class CommonInterceptor  extends HandlerInterceptorAdapter{
                            HttpServletResponse response, Object handler,
                            ModelAndView modelAndView) throws Exception {
         Boolean pjax = Boolean.parseBoolean(request.getHeader("X-PJAX"));
-        log.info("==============执行顺序: 2、postHandle================");
+        log.info("执行顺序: 2、postHandle");
         if(pjax){  //替换模板
             log.info("pjax模板");
             modelAndView.addObject("layoutName", "layout-pjax.ftl");
@@ -76,6 +76,6 @@ public class CommonInterceptor  extends HandlerInterceptorAdapter{
     public void afterCompletion(HttpServletRequest request,
                                 HttpServletResponse response, Object handler, Exception ex)
             throws Exception {
-            log.info("==============执行顺序: 3、afterCompletion================");
+            log.info("执行顺序: 3、afterCompletion");
     }
 }

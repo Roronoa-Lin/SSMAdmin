@@ -37,9 +37,9 @@ public class TestController {
 
         }
     }
-    @RequestMapping("/testindex")
+    @RequestMapping("/users")
     public String testindex(){
-        return "testindex";
+        return "/pages/tables/data";
     }
     @RequestMapping("/testbook")
     public String testbook(){

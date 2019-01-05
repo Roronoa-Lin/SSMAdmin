@@ -1,4 +1,4 @@
-$(function () {
+$(document).on('ready pjax:end',function () {
 
   'use strict';
 

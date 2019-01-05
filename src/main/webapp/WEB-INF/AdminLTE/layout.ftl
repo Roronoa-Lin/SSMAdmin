@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>AdminLTE 2 | Dashboard</title>
+        <title>系统管理</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.7 -->
@@ -48,7 +48,7 @@
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>A</b>LT</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+                <span class="logo-lg"><b>系统管理</b>LTE</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -260,7 +260,7 @@
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                                <span class="hidden-xs">Alexander Pierce</span>
+                                <span class="hidden-xs">${user!'未知用户    '}</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
@@ -268,7 +268,7 @@
                                     <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                     <p>
-                                        Alexander Pierce - Web Developer
+                                        ${user!'未知用户'}
                                         <small>Member since Nov. 2012</small>
                                     </p>
                                 </li>
@@ -293,7 +293,7 @@
                                         <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="signout" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="signout" class="btn btn-default btn-flat">退出登陆</a>
                                     </div>
                                 </li>
                             </ul>
@@ -416,14 +416,14 @@
                     </li>
                     <li class="treeview">
                         <a href="#">
-                            <i class="fa fa-table"></i> <span>Tables</span>
+                            <i class="fa fa-table"></i> <span>系统管理</span>
                             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-                            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+                            <li><a href="users"><i class="fa fa-circle-o"></i>用户</a></li>
                         </ul>
                     </li>
                     <li>
@@ -770,11 +770,45 @@
     <script src="dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
+    <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <!--pjax-->
     <script src="dist/js/jquery.pjax.js"></script>
     <script>
+        //pjax
         $(document).pjax('[data-pjax] a, a[data-pjax]', '#pjax-container');
+        //左侧高亮
+        $(document).on('pjax:complete',function(){
+            $('.sidebar-menu li:not(.treeview) > a').on('click', function(){
+                var $parent = $(this).parent().addClass('active');
+                $parent.siblings('.treeview.active').find('> a').trigger('click');
+                $parent.siblings().removeClass('active').find('li').removeClass('active');
+            });
+
+            $(window).on('load', function(){
+                $('.sidebar-menu a').each(function(){
+                    if(this.href === window.location.href){
+                        $(this).parent().addClass('active')
+                            .closest('.treeview-menu').addClass('.menu-open')
+                            .closest('.treeview').addClass('active');
+                    }
+                });
+            });
+        });
     </script
+    <script>
+        $(function () {
+            $('#example1').DataTable()
+            $('#example2').DataTable({
+                'paging'      : true,
+                'lengthChange': false,
+                'searching'   : false,
+                'ordering'    : true,
+                'info'        : true,
+                'autoWidth'   : false
+            })
+        })
+    </script>
     </body>
     </html>
 </#macro>
