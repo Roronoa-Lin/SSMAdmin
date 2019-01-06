@@ -1,6 +1,7 @@
 package com.admin.entity;
 
 public class User {
+    private int id;
     private String mail;
     private String name;
     private String password;
@@ -14,11 +15,14 @@ public class User {
         this.password=password;
     }
     //有参构造
-    public User(String mail,String name,String password){
+    public User(int id,String mail,String name,String password){
+        this.id = id;
         this.mail=mail;
         this.name=name;
         this.password=password;
     }
+    public int getId(){return id;}
+    public void setId(int id){this.id=id;}
     public String getMail(){return mail;}
     public void setMail(String mail){this.mail=mail;}
     public String getName(){return name;}

@@ -9,4 +9,7 @@
     <select id="user" resultType="com.admin.entity.User">
         select * from users where mail=#{arg0} and password=#{arg1}
     </select>
+    <select id="listall" resultType="com.admin.entity.User">
+        select * from users
+    </select>
 </mapper>

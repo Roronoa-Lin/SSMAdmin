@@ -16,6 +16,7 @@
     <mvc:resources location="/WEB-INF/AdminLTE/dist/" mapping="/dist/**"/>
     <mvc:resources location="/WEB-INF/AdminLTE/bower_components/" mapping="/bower_components/**"/>
     <mvc:resources location="/WEB-INF/AdminLTE/plugins/" mapping="/plugins/**"/>
+    <mvc:resources location="/WEB-INF/AdminLTE/NProgress/" mapping="/NProgress/**"/>
 
     <!--配置 view 解析器-->
 
@@ -71,13 +72,11 @@
             <mvc:exclude-mapping path="/loginaction"/>
             <mvc:exclude-mapping path="/login"/>
             <mvc:exclude-mapping path="/test"/>
-            <mvc:exclude-mapping path="/testuser"/>
-            <mvc:exclude-mapping path="/testindex"/>
-            <mvc:exclude-mapping path="/testbook"/>
             <mvc:exclude-mapping path="/dist/**"/>
             <mvc:exclude-mapping path="/bower_components/**"/>
             <mvc:exclude-mapping path="/dist/**"/>
             <mvc:exclude-mapping path="/plugins/**"/>
+            <mvc:exclude-mapping path="/NProgress/**"/>
             <bean id="commonInterceptor" class="com.admin.service.CommonInterceptor"></bean> <!--这个类就是我们自定义的Interceptor -->
         </mvc:interceptor>
         <!-- 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法  -->

@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class TestController {
     @Autowired
@@ -38,7 +40,9 @@ public class TestController {
         }
     }
     @RequestMapping("/users")
-    public String testindex(){
+    public String users(Model model){
+        List<User> list = userService.listall();
+        model.addAttribute("data",list);
         return "/pages/tables/data";
     }
     @RequestMapping("/testbook")

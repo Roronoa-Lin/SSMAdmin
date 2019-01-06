@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
         <!-- Ionicons -->
         <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
         <!-- Theme style -->
         <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
         <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -28,6 +30,7 @@
         <link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker.css">
         <!-- bootstrap wysihtml5 - text editor -->
         <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+        <link rel="stylesheet" href="NProgress/nprogress.css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -423,7 +426,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-                            <li><a href="users"><i class="fa fa-circle-o"></i>用户</a></li>
+                            <li><a href="users" data-pjax><i class="fa fa-circle-o"></i>用户</a></li>
                         </ul>
                     </li>
                     <li>
@@ -732,7 +735,8 @@
         <div class="control-sidebar-bg"></div>
     </div>
     <!-- ./wrapper -->
-
+    <!--NProgress-->
+    <script src="NProgress/nprogress.js"></script>
     <!-- jQuery 3 -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->
@@ -770,6 +774,7 @@
     <script src="dist/js/pages/dashboard.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
+    <!-- DataTables -->
     <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <!--pjax-->
@@ -777,6 +782,8 @@
     <script>
         //pjax
         $(document).pjax('[data-pjax] a, a[data-pjax]', '#pjax-container');
+        $(document).on('pjax:start', function() { NProgress.start(); });
+        $(document).on('pjax:end',   function() { NProgress.done();  });
         //左侧高亮
         $(document).on('pjax:complete',function(){
             $('.sidebar-menu li:not(.treeview) > a').on('click', function(){
@@ -795,8 +802,6 @@
                 });
             });
         });
-    </script
-    <script>
         $(function () {
             $('#example1').DataTable()
             $('#example2').DataTable({
@@ -808,7 +813,7 @@
                 'autoWidth'   : false
             })
         })
-    </script>
+    </script
     </body>
     </html>
 </#macro>

@@ -17,7 +17,7 @@ public class LoginController {
     public String login(){
         return "/pages/examples/login";
     }
-
+    //登录验证
     @RequestMapping("/loginaction")
     public String select(Model model, HttpSession session, @RequestParam("email") String email, @RequestParam("password") String password)
     {
@@ -31,26 +31,6 @@ public class LoginController {
             }
     }
 
-
-    //登录验证
-    /*@RequestMapping("/loginaction")
-    public String select(Model model, HttpSession session, @RequestParam("email") String email, @RequestParam("password") String password)
-    {
-        String user = (String)session.getAttribute("user");
-        if (user==null){
-            if (email.equals(password)){
-                session.setAttribute("user",email); //设置session
-                return "redirect:admin";
-            }else{
-                model.addAttribute("message","密码错误，请重新输入！");
-                return  "/pages/examples/login";
-            }
-        }else{
-            model.addAttribute("user",user);
-            return "index";
-        }
-
-    }*/
     //等入主界面
     @RequestMapping(value = "/admin")
     public String admin(Model model,HttpSession session)

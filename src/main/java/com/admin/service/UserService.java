@@ -6,6 +6,8 @@ import com.admin.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService implements IUserService<User> {
     @Autowired
@@ -17,5 +19,9 @@ public class UserService implements IUserService<User> {
     @Override
     public User user(String mail,String password) {
         return userDao.user(mail,password);
+    }
+    @Override
+    public List<User> listall() {
+        return userDao.listall();
     }
 }
