@@ -781,9 +781,9 @@
     <script src="dist/js/jquery.pjax.js"></script>
     <script>
         //pjax
-        $(document).pjax('[data-pjax] a, a[data-pjax]', '#pjax-container');
-        $(document).on('pjax:start', function() { NProgress.start(); });
-        $(document).on('pjax:end',   function() { NProgress.done();  });
+        $(document).pjax('[data-pjax] a, a[data-pjax]', '#pjax-container')
+        .on('pjax:start', function() { NProgress.start(); })
+        .on('pjax:end',   function() { NProgress.done();  });
         //左侧高亮
         $(document).on('pjax:complete',function(){
             $('.sidebar-menu li:not(.treeview) > a').on('click', function(){
@@ -801,8 +801,10 @@
                     }
                 });
             });
+            collapse();
+            loadt1();
         });
-        $(function () {
+        $(function loadt1() {
             $('#example1').DataTable()
             $('#example2').DataTable({
                 'paging'      : true,
@@ -812,7 +814,7 @@
                 'info'        : true,
                 'autoWidth'   : false
             })
-        })
+        });
     </script
     </body>
     </html>
