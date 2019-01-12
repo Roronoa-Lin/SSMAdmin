@@ -85,7 +85,20 @@
           </div>
         </div>
         <!-- /.nav-tabs-custom -->
-
+        <!-- Custom tabs (Charts with tabs)-->
+        <div class="nav-tabs-custom">
+          <!-- Tabs within a box -->
+          <ul class="nav nav-tabs pull-right">
+            <li class="active"><a href="#maine" data-toggle="tab">maine</a></li>
+            <li><a href="#maine1" data-toggle="tab">maine1</a></li>
+            <li class="pull-left header"><i class="fa fa-inbox"></i> echarts</li>
+          </ul>
+          <div class="tab-content no-padding">
+            <div class="chart tab-pane active" id="maine" style="position: relative; height: 300px;"></div>
+            <div class="chart tab-pane" id="maine1" style="position: relative;height: 300px;"></div>
+          </div>
+        </div>
+        <!-- /.nav-tabs-custom -->
         <!-- Chat box -->
         <div class="box box-success">
           <div class="box-header">

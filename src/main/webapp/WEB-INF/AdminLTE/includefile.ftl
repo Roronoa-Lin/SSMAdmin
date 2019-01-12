@@ -65,4 +65,56 @@
             'autoWidth'   : false
         })
     };
+
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('maine'));
+
+    // 指定图表的配置项和数据
+    var option = {
+        tooltip: {},
+        legend: {
+            data:['销量']
+        },
+        xAxis: {
+            data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子","测试","测试","测试"]
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'bar',
+            data: [5, 20, 36, 10, 10, 20, 20,15,15]
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+    // 基于准备好的dom，初始化echarts实例
+    var myChart1 = echarts.init(document.getElementById('maine1'));
+
+    // 指定图表的配置项和数据
+    var option1 = {
+        tooltip: {},
+        legend: {
+            data:['销量']
+        },
+        xAxis: {
+            data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子","测试","测试","测试"]
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'bar',
+            data: [5, 20, 36, 10, 10, 20, 20,15,15]
+        }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表。
+    myChart1.setOption(option1);
+
+/*    window.onresize = function(){
+        myChart.resize();
+        myChart1.resize();
+        //myChart1.resize();    //若有多个图表变动，可多写
+    };*/
 </script
