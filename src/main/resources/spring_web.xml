@@ -13,10 +13,9 @@
     <!--将所有静态资源，交给 Servlet 处理-->
     <!--<mvc:default-servlet-handler default-servlet-name="freemarkerResolver"/>-->
 
-    <mvc:resources location="/WEB-INF/AdminLTE/dist/" mapping="/dist/**"/>
-    <mvc:resources location="/WEB-INF/AdminLTE/bower_components/" mapping="/bower_components/**"/>
-    <mvc:resources location="/WEB-INF/AdminLTE/plugins/" mapping="/plugins/**"/>
-    <mvc:resources location="/WEB-INF/AdminLTE/NProgress/" mapping="/NProgress/**"/>
+    <mvc:resources location="/WEB-INF/AdminLTE-3/dist/" mapping="/dist/**"/>
+    <mvc:resources location="/WEB-INF/AdminLTE-3/build/" mapping="/build/**"/>
+    <mvc:resources location="/WEB-INF/AdminLTE-3/plugins/" mapping="/plugins/**"/>
 
     <!--配置 view 解析器-->
 
@@ -34,7 +33,7 @@
     <!-- freemarker的配置 -->
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <property name="templateLoaderPath">
-            <value>/WEB-INF/AdminLTE/</value>
+            <value>/WEB-INF/AdminLTE-3/</value>
         </property>
         <property name="freemarkerSettings"><!-- 设置FreeMarker环境属性 -->
             <props>
@@ -73,10 +72,9 @@
             <mvc:exclude-mapping path="/login"/>
             <mvc:exclude-mapping path="/test"/>
             <mvc:exclude-mapping path="/dist/**"/>
-            <mvc:exclude-mapping path="/bower_components/**"/>
+            <mvc:exclude-mapping path="/build/**"/>
             <mvc:exclude-mapping path="/dist/**"/>
             <mvc:exclude-mapping path="/plugins/**"/>
-            <mvc:exclude-mapping path="/NProgress/**"/>
             <bean id="commonInterceptor" class="com.admin.service.CommonInterceptor"></bean> <!--这个类就是我们自定义的Interceptor -->
         </mvc:interceptor>
         <!-- 当设置多个拦截器时，先按顺序调用preHandle方法，然后逆序调用每个拦截器的postHandle和afterCompletion方法  -->

@@ -2,7 +2,7 @@
  * Author: Abdullah A Almsaeed
  * Date: 4 Jan 2014
  * Description:
- *      This is a demo file used only for the main dashboard (index.ftl)
+ *      This is a demo file used only for the main dashboard (layout.ftl)
  **/
 
 $(function () {

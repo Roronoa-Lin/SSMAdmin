@@ -104,7 +104,7 @@
         yAxis: {},
         series: [{
             name: '销量',
-            type: 'bar',
+            type: 'line',
             data: [5, 20, 36, 10, 10, 20, 20,15,15]
         }]
     };
@@ -112,9 +112,9 @@
     // 使用刚指定的配置项和数据显示图表。
     myChart1.setOption(option1);
 
-/*    window.onresize = function(){
+    window.onresize = function(){
         myChart.resize();
         myChart1.resize();
         //myChart1.resize();    //若有多个图表变动，可多写
-    };*/
+    };
 </script
