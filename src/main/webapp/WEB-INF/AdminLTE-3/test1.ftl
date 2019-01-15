@@ -1,5 +1,6 @@
 <#include layoutName>
 <@html>
+    1
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
