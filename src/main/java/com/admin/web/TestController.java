@@ -51,8 +51,8 @@ public class TestController {
     }
 
     @RequestMapping("/adduser")
-    public String adduser(@RequestParam("email") String email,@RequestParam("password") String password){
-        userService.adduser(email,password);
+    public String adduser(@RequestParam("email") String email,@RequestParam("name") String name,@RequestParam("password") String password){
+        userService.adduser(email,name,password);
         System.out.println("新增成功！");
         return "redirect:users";
     }

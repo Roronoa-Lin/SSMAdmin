@@ -13,6 +13,6 @@
         select * from users
     </select>
     <insert id="adduser">
-        insert into users(mail,password) values (#{arg0},#{arg1})
+        insert into users(mail,name,password) values (#{arg0},#{arg1},#{arg2})
     </insert>
 </mapper>

@@ -25,7 +25,7 @@ public class UserService implements IUserService<User> {
         return userDao.listall();
     }
     @Override
-    public void adduser(String mail,String password) {
-         userDao.adduser(mail,password);
+    public void adduser(String mail,String name,String password) {
+         userDao.adduser(mail,name,password);
     }
 }
