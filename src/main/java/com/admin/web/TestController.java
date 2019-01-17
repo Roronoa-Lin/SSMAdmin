@@ -49,4 +49,11 @@ public class TestController {
     public String testbook(){
         return "testbook";
     }
+
+    @RequestMapping("/adduser")
+    public String adduser(@RequestParam("email") String email,@RequestParam("password") String password){
+        userService.adduser(email,password);
+        System.out.println("新增成功！");
+        return "redirect:users";
+    }
 }

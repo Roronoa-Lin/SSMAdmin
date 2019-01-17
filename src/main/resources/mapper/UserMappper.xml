@@ -12,4 +12,7 @@
     <select id="listall" resultType="com.admin.entity.User">
         select * from users
     </select>
+    <insert id="adduser">
+        insert into users(mail,password) values (#{arg0},#{arg1})
+    </insert>
 </mapper>
