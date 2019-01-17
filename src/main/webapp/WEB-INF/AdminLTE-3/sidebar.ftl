@@ -14,7 +14,7 @@
                 <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="/admin" class="d-block">${user!'未知用户'}</a>
             </div>
         </div>
 
@@ -52,6 +52,25 @@
                         </li>
                     </ul>
                 </li>
+                <#--系统管理-->
+                <li class="nav-item has-treeview menu-open">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-dashboard"></i>
+                        <p>
+                            系统管理
+                            <i class="right fa fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="/users" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>用户管理</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <#--系统管理菜单完-->
                 <li class="nav-item">
                     <a href="pages/widgets.html" class="nav-link">
                         <i class="nav-icon fa fa-th"></i>

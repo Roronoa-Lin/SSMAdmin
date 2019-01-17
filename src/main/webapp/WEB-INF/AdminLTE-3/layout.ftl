@@ -5,9 +5,8 @@
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
-    <!-- Navbar -->
+    <!-- 页眉 -->
     <#include 'navbar.ftl'>
-    <!-- /.navbar -->
 
     <!-- 主侧边栏 -->
     <#include 'sidebar.ftl'>
@@ -26,7 +25,6 @@
     <aside class="control-sidebar control-sidebar-dark">
         <!-- Control sidebar content goes here -->
     </aside>
-    <!-- /.control-sidebar -->
 </div>
 <!-- 引入 -->
 <#include 'include.ftl'>

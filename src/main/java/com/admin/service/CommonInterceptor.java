@@ -61,10 +61,10 @@ public class CommonInterceptor  extends HandlerInterceptorAdapter{
         Boolean pjax = Boolean.parseBoolean(request.getHeader("X-PJAX"));
         log.info("执行顺序: 2、postHandle");
         if(pjax){  //替换模板
-            log.info("pjax模板");
+            log.info("访问的页面是pjax模板");
             modelAndView.addObject("layoutName", "layout-pjax.ftl");
         }else{
-            log.info("不是pjax模板");
+            log.info("访问的页面不是pjax模板");
             modelAndView.addObject("layoutName", "layout.ftl");
         }
     }

@@ -116,9 +116,7 @@
                         class="fa fa-th-large"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="fa fa-comments-o"></i>
-                <i class="fas fa-sign-in-alt"></i>
+            <a class="nav-link" href="/signout">退出登陆
             </a>
         </li>
     </ul>
