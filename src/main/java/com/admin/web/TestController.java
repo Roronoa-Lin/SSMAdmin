@@ -14,16 +14,9 @@ import java.util.List;
 public class TestController {
     @Autowired
     private UserService userService;
-    @RequestMapping("/test")
-    public String test(Model model, @RequestParam("email") String mail, @RequestParam("password") String password){
-        int test = userService.login(mail,password);
-        if (test==1){
-            model.addAttribute("message","有");
-            return "/pages/examples/login";
-        }else {
-            model.addAttribute("message","无");
-            return "/pages/examples/login";
-        }
+    @RequestMapping("/charts")
+    public String test(){
+        return "/pages/charts/chartjs";
     }
 
     @RequestMapping("/testuser")
@@ -53,7 +46,6 @@ public class TestController {
     @RequestMapping("/adduser")
     public String adduser(@RequestParam("email") String email,@RequestParam("name") String name,@RequestParam("password") String password){
         userService.adduser(email,name,password);
-        System.out.println("新增成功！");
         return "redirect:users";
     }
 }
