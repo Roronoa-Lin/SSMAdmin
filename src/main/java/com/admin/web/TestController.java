@@ -31,9 +31,8 @@ public class TestController {
         userService.adduser(email,name,password);
         return "redirect:users";
     }
-    @RequestMapping("/test")
-    public String test(Model model){
-        model.addAttribute("data",1);
+    @RequestMapping("/charts")
+    public String test(){
         return "/pages/charts/charts";
     }
 }
