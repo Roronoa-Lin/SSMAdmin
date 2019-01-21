@@ -17,9 +17,10 @@
                 </div>
               </div>
               <div class="card-body">
-                <div class="chart">
-                  <canvas id="areaChart" style="height:250px"></canvas>
-                </div>
+                <#--<div class="chart">-->
+                  <div id="main" style="height:400px;"></div>
+                  <#--<canvas id="areaChart" style="height:250px"></canvas>-->
+                <#--</div>-->
               </div>
               <!-- /.card-body -->
             </div>
