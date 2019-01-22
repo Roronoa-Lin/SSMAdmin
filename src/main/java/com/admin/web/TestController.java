@@ -7,8 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class TestController {
@@ -32,7 +37,18 @@ public class TestController {
         return "redirect:users";
     }
     @RequestMapping("/charts")
-    public String test(){
+    public String test(Model m){
+        int userc = userService.testcount();
+        m.addAttribute("usc",userc);
         return "/pages/charts/charts";
     }
+    @RequestMapping("/jsondata")
+    @ResponseBody
+    public Map json(){
+        List users = userService.listall();
+        Map map = new HashMap();
+        map.put("data",users);
+        return map;
+    }
+
 }

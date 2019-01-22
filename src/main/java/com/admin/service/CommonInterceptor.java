@@ -58,14 +58,21 @@ public class CommonInterceptor  extends HandlerInterceptorAdapter{
     public void postHandle(HttpServletRequest request,
                            HttpServletResponse response, Object handler,
                            ModelAndView modelAndView) throws Exception {
+        User user =  (User)request.getSession().getAttribute("user");
         Boolean pjax = Boolean.parseBoolean(request.getHeader("X-PJAX"));
         log.info("执行顺序: 2、postHandle");
         if(pjax){  //替换模板
             log.info("访问的页面是pjax模板");
             modelAndView.addObject("layoutName", "layout-pjax.ftl");
+            //获取session user对象，注入每个页面
+            String username = user.getName();
+            modelAndView.addObject("user",username);
         }else{
             log.info("访问的页面不是pjax模板");
             modelAndView.addObject("layoutName", "layout.ftl");
+            //获取session user对象，注入每个页面
+            String username = user.getName();
+            modelAndView.addObject("user",username);
         }
     }
     /**

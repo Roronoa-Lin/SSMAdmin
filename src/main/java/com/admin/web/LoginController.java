@@ -33,11 +33,11 @@ public class LoginController {
 
     //等入主界面
     @RequestMapping(value = "/admin")
-    public String admin(Model model,HttpSession session)
+    public String admin(/*Model model,HttpSession session*/)
     {
-        User user = (User)session.getAttribute("user");
+        /*User user = (User)session.getAttribute("user");
         String username = user.getName();
-        model.addAttribute("user",username);
+        model.addAttribute("user",username);*/
         return "index";
     }
 

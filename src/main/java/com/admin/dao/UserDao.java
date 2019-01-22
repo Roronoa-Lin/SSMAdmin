@@ -9,4 +9,5 @@ public interface UserDao<T> {
     User user(String mail,String password);
     List<T> listall();
     void adduser(String mail,String name,String password);
+    int testcount();
 }

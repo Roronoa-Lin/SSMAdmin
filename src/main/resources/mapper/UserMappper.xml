@@ -15,4 +15,7 @@
     <insert id="adduser">
         insert into users(mail,name,password) values (#{arg0},#{arg1},#{arg2})
     </insert>
+    <select id="testcount" resultType="java.lang.Integer">
+        select count(1) from users
+    </select>
 </mapper>

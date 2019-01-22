@@ -8,7 +8,7 @@
             <!-- AREA CHART -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Area Chart</h3>
+                <h3 class="card-title">Echardemo(${usc})</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -27,7 +27,7 @@
             <!-- /.card -->
 
             <!-- DONUT CHART -->
-            <div class="card card-danger">
+            <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Donut Chart</h3>
 
@@ -37,9 +37,7 @@
                   <button type="button" class="btn btn-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                 </div>
               </div>
-              <div class="card-body">
-                <canvas id="pieChart" style="height:250px"></canvas>
-              </div>
+              <div id="as" style="height:400px;"></div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
@@ -59,9 +57,7 @@
                 </div>
               </div>
               <div class="card-body">
-                <div class="chart">
-                  <canvas id="lineChart" style="height:250px"></canvas>
-                </div>
+                <div id="main1" style="height:400px;"></div>
               </div>
               <!-- /.card-body -->
             </div>

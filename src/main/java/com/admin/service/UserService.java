@@ -28,4 +28,6 @@ public class UserService implements IUserService<User> {
     public void adduser(String mail,String name,String password) {
          userDao.adduser(mail,name,password);
     }
+    @Override
+    public int testcount(){return userDao.testcount();}
 }

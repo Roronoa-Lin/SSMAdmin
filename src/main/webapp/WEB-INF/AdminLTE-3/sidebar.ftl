@@ -90,21 +90,9 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/charts/test.ftl" class="nav-link">
+                            <a href="charts" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
-                                <p>ChartJS</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/charts/flot.html" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Flot</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/charts/inline.html" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Inline</p>
+                                <p>EChart测试</p>
                             </a>
                         </li>
                     </ul>
