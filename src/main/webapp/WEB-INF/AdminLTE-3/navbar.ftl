@@ -116,7 +116,7 @@
                         class="fa fa-th-large"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/signout">退出登陆
+            <a class="nav-link" href="/signout">退出
             </a>
         </li>
     </ul>

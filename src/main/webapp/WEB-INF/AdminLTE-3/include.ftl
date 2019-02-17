@@ -36,6 +36,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 <script src="dist/js/plugins/echarts/echarts.min.js"></script>
+<script src="dist/js/plugins/echarts/macarons.js"></script>
 <script src="dist/js/echarsgo/echars.js"></script>
 <script>
     $(function () {

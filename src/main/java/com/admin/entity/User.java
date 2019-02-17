@@ -1,9 +1,15 @@
 package com.admin.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 public class User {
+    @JSONField(name = "ID")
     private int id;
+    @JSONField(name = "MAIL")
     private String mail;
+    @JSONField(name = "NAME")
     private String name;
+    @JSONField(name = "PASSWORD")
     private String password;
     //无参构造
     public User(){

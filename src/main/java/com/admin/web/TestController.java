@@ -1,7 +1,9 @@
 package com.admin.web;
 
 import com.admin.entity.User;
+import com.admin.service.TestService;
 import com.admin.service.UserService;
+import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +22,8 @@ import java.util.Map;
 public class TestController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private TestService testService;
 
     @RequestMapping("/users")
     public String users(Model model){
@@ -42,13 +47,38 @@ public class TestController {
         m.addAttribute("usc",userc);
         return "/pages/charts/charts";
     }
+    @RequestMapping("/chartso")
+    public String testo(Model m){
+        int userc = testService.countstore();
+        m.addAttribute("usc",userc);
+        return "/pages/charts/charts";
+    }
     @RequestMapping("/jsondata")
     @ResponseBody
-    public Map json(){
+    public String json(){
+        List<User> users = userService.listall();
+        String jsondata = JSON.toJSONString(users);
+        return jsondata;
+        /*String jsondata = "";
+        String mail;
+        String password;
+        int id;
         List users = userService.listall();
-        Map map = new HashMap();
-        map.put("data",users);
-        return map;
+        for (int i=0;i<users.size();i++){
+            User user = (User)users.get(i);
+            mail = user.getMail();
+            password = user.getPassword();
+            id = user.getId();
+            jsondata += '['+"Id:"+id+';'+"Mail:"+mail+';'+"Password:"+password+"];";
+        }
+        return jsondata;*/
+    }
+
+    @RequestMapping("/data")
+    @ResponseBody
+    public String data(){
+        int [] data = new int[]{1,2,3,4,5,6,7,8,9};
+        return java.util.Arrays.toString(data);
     }
 
 }

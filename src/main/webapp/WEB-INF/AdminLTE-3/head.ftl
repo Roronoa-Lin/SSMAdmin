@@ -24,4 +24,22 @@
     <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <style>
+        .sidebar::-webkit-scrollbar-track
+        {
+            border: 1px solid black;
+            background-color: #F5F5F5;
+        }
+
+        .sidebar::-webkit-scrollbar
+        {
+            width: 10px;
+            background-color: #F5F5F5;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb
+        {
+            background-color: #000000;
+        }
+    </style>
 </head>

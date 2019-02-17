@@ -1,6 +1,6 @@
 beforeEach ->
   placeholder = $('<div id="graph" style="width: 600px; height: 400px"></div>')
-  $('#test').append(placeholder)
+  $('#TestDao').append(placeholder)
 
 afterEach ->
-  $('#test').empty()
+  $('#TestDao').empty()

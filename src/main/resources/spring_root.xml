@@ -14,6 +14,12 @@
         <property name="user" value="root"/>
         <property name="password" value=""/>
     </bean>
+    <bean id="dataSourceoracle" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="oracle.jdbc.driver.OracleDriver"/>
+        <property name="jdbcUrl" value="jdbc:oracle:thin:@//10.10.1.39:1521/TEST"/>
+        <property name="user" value="neands3"/>
+        <property name="password" value="abc123"/>
+    </bean>
 
     <!-- 配置mybatis -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -24,10 +30,22 @@
         <!--映射 DML 语法 xml-->
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
+    <bean id="sqlSessionFactoryoracle" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--将数据源实例化 -->
+        <property name="dataSource" ref="dataSourceoracle"/>
+        <!--映射 日志 -->
+        <property name="configLocation" value="classpath:mybatis_log.xml"/>
+        <!--映射 DML 语法 xml-->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+    </bean>
     <!--映射 dao 中  数据访问类-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <property name="basePackage" value="com.admin.dao"/>
+    </bean>
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryoracle"/>
+        <property name="basePackage" value="com.admin.oracledao"/>
     </bean>
 
 </beans>
