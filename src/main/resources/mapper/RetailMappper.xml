@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 映射dao -->
+<mapper namespace="com.admin.oracledao.RetailDao">
+    <resultMap type="com.admin.entity.Retail" id="CustomerRetail">
+        <result property="Name" column="Name"/>
+        <result property="Qty" column="Qty" />
+    </resultMap>
+    <select id="Customersum" resultMap="CustomerRetail">
+        select c.name as Name,sum(a.qty) as Qty from (M_RETAILITEM a inner join M_RETAIL b on a.id = b.id) inner join C_CUSTOMER c on b.c_customer_id=c.id where b.billdate > 20190101 group by c.name
+        /*select sum(code) as Qty,name as Name from C_SUPPLIER where code>600 and code &lt; 700 group by name*/
+    </select>
+</mapper>

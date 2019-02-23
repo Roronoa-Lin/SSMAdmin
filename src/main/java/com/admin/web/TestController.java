@@ -1,6 +1,8 @@
 package com.admin.web;
 
+import com.admin.entity.Retail;
 import com.admin.entity.User;
+import com.admin.service.RetailService;
 import com.admin.service.TestService;
 import com.admin.service.UserService;
 import com.alibaba.fastjson.JSON;
@@ -24,6 +26,8 @@ public class TestController {
     private UserService userService;
     @Autowired
     private TestService testService;
+    @Autowired
+    private RetailService retailService;
 
     @RequestMapping("/users")
     public String users(Model model){
@@ -79,6 +83,14 @@ public class TestController {
     public String data(){
         int [] data = new int[]{1,2,3,4,5,6,7,8,9};
         return java.util.Arrays.toString(data);
+    }
+
+    @RequestMapping(value="/jsondatac",produces = {"application/json;","text/html;charset=utf-8"})
+    @ResponseBody
+    public String jsonc(){
+        List<Retail> retails = retailService.Customersum();
+        String Customersum = JSON.toJSONString(retails);
+        return Customersum;
     }
 
 }
